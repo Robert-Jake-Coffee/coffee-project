@@ -57,15 +57,26 @@ submitButton.addEventListener('click', updateCoffees);
 roastSelection.addEventListener('mouseout', updateCoffees);
 
 
-var autocomplete=document.getElementById("FirstName")
-// autocomplete.addEventListener("keypress",function () {
-// var cofeesArray =[];
-//     var texto=autocomplete.value;
-//
-//     })
-//
-//     renderCoffees(cofeesArray);
-//
-// })
+
+//function recieve an array and a substring and look in every array element for a coincidence
+
+function foundCofee(coffees, coincidence) {
+
+    var matches=[];
+
+    for(var i=0;i<coffees.length;i++)
+    {
+        if(coffees[i].name.indexOf(coincidence)!==-1){
+
+            matches.push(coffees[i]);
+        }
+    }
+
+    return matches;
+
+}
+
+
+console.log(foundCofee(coffees, "Es"));
 
 
