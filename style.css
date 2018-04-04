@@ -32,10 +32,17 @@ div>h3, p {
 }
 
 div>p {
-    color: lightgray;
+    color: lightslategray;
 }
 
 .coffee {
     max-width: 50%;
+    float: left;
     clear: right;
 }
+
+.container{
+    max-width: 70%;
+    margin-top: 100px;
+}
+

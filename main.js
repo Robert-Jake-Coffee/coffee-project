@@ -2,7 +2,7 @@
 
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
-    html += '<h3>' + coffee.name + '</h3>';
+    html += '<h3>' + coffee.name +'</h3>' +" ";
     html += '<p>' + coffee.roast + '</p>';
     html += '</div>';
     return html;
@@ -55,3 +55,17 @@ var roastSelection = document.querySelector('#roast-selection');
 tbody.innerHTML = renderCoffees(coffees);
 submitButton.addEventListener('click', updateCoffees);
 roastSelection.addEventListener('mouseout', updateCoffees);
+
+
+var autocomplete=document.getElementById("FirstName")
+// autocomplete.addEventListener("keypress",function () {
+// var cofeesArray =[];
+//     var texto=autocomplete.value;
+//
+//     })
+//
+//     renderCoffees(cofeesArray);
+//
+// })
+
+
