@@ -34,3 +34,8 @@ div>h3, p {
 div>p {
     color: lightgray;
 }
+
+.coffee {
+    max-width: 50%;
+    clear: right;
+}

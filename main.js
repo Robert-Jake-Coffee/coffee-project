@@ -4,6 +4,7 @@ function renderCoffee(coffee) {
     var html = '<div class="coffee">';
     html += '<h3>' + coffee.name + '</h3>';
     html += '<p>' + coffee.roast + '</p>';
+    html += '</div>';
     return html;
 }
 
@@ -21,6 +22,8 @@ function updateCoffees(e) {
     var filteredCoffees = [];
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
+            filteredCoffees.push(coffee);
+        } else if (selectedRoast === "all") {
             filteredCoffees.push(coffee);
         }
     });
@@ -51,4 +54,4 @@ var roastSelection = document.querySelector('#roast-selection');
 
 tbody.innerHTML = renderCoffees(coffees);
 submitButton.addEventListener('click', updateCoffees);
-roastSelection.addEventListener('mouseup', updateCoffees);
+roastSelection.addEventListener('mouseout', updateCoffees);
