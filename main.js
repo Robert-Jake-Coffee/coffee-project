@@ -51,32 +51,27 @@ var coffees = [
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
+var coffeeSearch = document.querySelector('#coffeeSearch');
 
 tbody.innerHTML = renderCoffees(coffees);
 submitButton.addEventListener('click', updateCoffees);
-roastSelection.addEventListener('mouseout', updateCoffees);
+roastSelection.addEventListener('change', updateCoffees);
+coffeeSearch.addEventListener('keyup', foundCoffee);
 
 
 
-//function recieve an array and a substring and look in every array element for a coincidence
+//function receive an array and a substring and look in every array element for a coincidence
 
-function foundCofee(coffees, coincidence) {
-
+function foundCoffee(e) {
     var matches=[];
-
-    for(var i=0;i<coffees.length;i++)
-    {
-        if(coffees[i].name.indexOf(coincidence)!==-1){
-
+    var coincidence = coffeeSearch.value.toUpperCase();
+    for(var i=0;i<coffees.length;i++) {
+        if(coffees[i].name.toUpperCase().indexOf(coincidence)!==-1){
             matches.push(coffees[i]);
         }
     }
-
+    tbody.innerHTML = renderCoffees(matches);
     return matches;
-
 }
-
-
-console.log(foundCofee(coffees, "Es"));
 
 
