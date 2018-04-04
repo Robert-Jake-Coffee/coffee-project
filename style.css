@@ -7,3 +7,30 @@ td, th {
     border: 1px solid black;
     padding: 5px 10px;
 }
+
+h1, h2 {
+    text-align: center;
+}
+.col-6 * {
+    width: 100%;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+select, input {
+    margin-bottom: 1em;
+}
+
+button {
+    padding: 0;
+}
+
+div>h3, p {
+    display: inline;
+}
+
+div>p {
+    color: lightgray;
+}
