@@ -71,6 +71,7 @@ function foundCoffee(e) {
         }
     }
     tbody.innerHTML = renderCoffees(matches);
+
     return matches;
 }
 
