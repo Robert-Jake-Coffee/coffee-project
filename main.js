@@ -2,7 +2,7 @@
 
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
-    html += '<h3>' + coffee.name +'</h3>' +" ";
+    html += '<h3>' + coffee.name +'</h3> ';
     html += '<p>' + coffee.roast + '</p>';
     html += '</div>';
     return html;
@@ -52,15 +52,13 @@ var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 var coffeeSearch = document.querySelector('#coffeeSearch');
-// var newName = document.querySelector('#newName');
-// var newRoast = document.querySelector('#add-coffee');
-// var newCoffee = document.querySelector('#new-coffee');
+
 
 tbody.innerHTML = renderCoffees(coffees);
 submitButton.addEventListener('click', updateCoffees);
 roastSelection.addEventListener('change', updateCoffees);
 coffeeSearch.addEventListener('keyup', foundCoffee);
-// newCoffee.addEventListener('click', addCoffee);
+
 
 
 
@@ -77,13 +75,24 @@ function foundCoffee(e) {
     tbody.innerHTML = renderCoffees(matches);
 }
 
-// function addCoffee(x) {
-//     var coffeeName = newName;
-//     var addRoast = newRoast;
-//     coffees.push({name: coffeeName, roast: addRoast});
-//     tbody.innerHTML = renderCoffees(coffees);
-//
+// function updateWithNewCoffees() {
+//     var newCoffeeList = [];
+//     coffees.forEach(function(coffee) {
+//         newCoffeeList.push(coffee)
+//     });
+//     tbody.innerHTML = renderCoffees();
 // }
-//
-// console.log(coffees);
+
+function addCoffee() {
+
+    var coffeeName = document.querySelector("#newName").value;
+    var addRoast = document.querySelector("#add-coffee").value;
+    var newCoffeeObject = {
+        id: coffees.length+1,
+        name: coffeeName,
+        roast: addRoast
+    };
+    coffees.push(newCoffeeObject);
+    tbody.innerHTML = renderCoffees(coffees);
+}
 
