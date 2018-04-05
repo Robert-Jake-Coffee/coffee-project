@@ -71,7 +71,7 @@ body{
     text-decoration-style: double;
 }
 
-.boton{
+.button{
 
     background-color: #a8803f;
     color: white;
@@ -79,7 +79,7 @@ body{
 
 }
 
-#add-coffee, #newName{
+#add-coffee, #newName, #roast-selection, #coffeeSearch{
     border: #a8803f solid 1px;
 
 }
