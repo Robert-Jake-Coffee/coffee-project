@@ -62,8 +62,6 @@ coffeeSearch.addEventListener('keyup', foundCoffee);
 newCoffee.addEventListener('click', addCoffee);
 
 
-
-
 //function receive an array and a substring and look in every array element for a coincidence
 
 function foundCoffee(e) {
@@ -89,4 +87,3 @@ function addCoffee(e) {
     coffees.push(newCoffeeObject);
     coffeeList.innerHTML = renderCoffees(coffees);
 }
-
